@@ -37,10 +37,14 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        print("Triggered");
         if (other.CompareTag("Obstacle")) {
             FindObjectOfType<GameManager>().GameOver();
         }
-        print("Triggered");
+        if(other.CompareTag("Score"))
+        {
+            FindObjectOfType<GameManager>().UpdateScore();
+        }
     }
 
 }

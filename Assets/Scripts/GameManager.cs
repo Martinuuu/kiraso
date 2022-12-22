@@ -81,7 +81,12 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         gameSpeed += gameSpeedIncrease * Time.deltaTime;
-        score += gameSpeed * Time.deltaTime;
+        
+    }
+
+    public void UpdateScore()
+    {
+        score ++;
         scoreText.text = Mathf.FloorToInt(score).ToString("D5");
     }
 
